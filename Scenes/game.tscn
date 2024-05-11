@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://ci885nw14tvg5"]
+[gd_scene load_steps=2 format=3 uid="uid://ci885nw14tvg5"]
+
+[ext_resource type="PackedScene" uid="uid://cu3la2cmj666c" path="res://Scenes/void.tscn" id="1_av8we"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Void" parent="." instance=ExtResource("1_av8we")]
+position = Vector2(585, 314)
+circleSize = 0.05
