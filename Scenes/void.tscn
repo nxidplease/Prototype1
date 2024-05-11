@@ -11,6 +11,7 @@ shader_parameter/circle_speed = 100.0
 
 [node name="Void" type="Sprite2D"]
 material = SubResource("ShaderMaterial_l4w64")
+position = Vector2(453, 297)
 texture = ExtResource("1_kce1h")
 script = ExtResource("3_ni2pu")
-circleSize = 0.1
+circleSize = 0.01
