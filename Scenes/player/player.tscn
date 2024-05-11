@@ -4,24 +4,28 @@
 [ext_resource type="Texture2D" uid="uid://chfhkk82eqr8s" path="res://icon.svg" id="1_tmj64"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7nxc5"]
-size = Vector2(128, 128)
+size = Vector2(24, 24)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_2su5l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1875, 0.1875)
 texture = ExtResource("1_tmj64")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_7nxc5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 
 [node name="BulletSpawn" type="Marker2D" parent="."]
-position = Vector2(0, -113)
+position = Vector2(0, -37)
 
 [node name="Sprite2D" type="Sprite2D" parent="BulletSpawn"]
-scale = Vector2(0.179688, 0.1875)
+scale = Vector2(0.0351565, 0.0383523)
 texture = ExtResource("1_tmj64")
