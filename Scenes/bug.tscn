@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0ctax5jc1bcn"]
+
+[ext_resource type="Texture2D" uid="uid://cfomyeumdlcn3" path="res://Assets/Bugs.png" id="1_gkbda"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ei0eo"]
+atlas = ExtResource("1_gkbda")
+region = Rect2(0, 15, 90, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0p4k"]
+atlas = ExtResource("1_gkbda")
+region = Rect2(90, 15, 90, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iv0fd"]
+atlas = ExtResource("1_gkbda")
+region = Rect2(180, 15, 90, 94)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_337ua"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ei0eo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0p4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iv0fd")
+}],
+"loop": true,
+"name": &"cockroach walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v1mmf"]
+radius = 18.0
+height = 56.0
+
+[node name="RigidBody2D" type="RigidBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_337ua")
+animation = &"cockroach walk"
+frame_progress = 0.672056
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_v1mmf")
