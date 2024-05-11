@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ci885nw14tvg5"]
 
 [ext_resource type="Texture2D" uid="uid://chfhkk82eqr8s" path="res://icon.svg" id="1_123mn"]
-[ext_resource type="PackedScene" uid="uid://d33fsn34k0yqb" path="res://Scenes/player.tscn" id="2_lsgwx"]
+[ext_resource type="PackedScene" uid="uid://d33fsn34k0yqb" path="res://Scenes/player/player.tscn" id="2_lsgwx"]
 
 [node name="Game" type="Node2D"]
 
@@ -9,4 +9,4 @@
 scale = Vector2(16.7656, 16.7656)
 texture = ExtResource("1_123mn")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_lsgwx")]
+[node name="Player" parent="." instance=ExtResource("2_lsgwx")]
