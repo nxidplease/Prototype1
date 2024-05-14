@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ircpbxwvjqge"]
+
+[ext_resource type="Script" path="res://Scripts/torch.gd" id="1_ktop3"]
+
+[node name="TorchSpwaner" type="Node2D"]
+script = ExtResource("1_ktop3")
+
+[node name="numTorch" type="CanvasLayer" parent="."]

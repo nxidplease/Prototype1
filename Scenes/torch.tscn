@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cchmhlb1mwgn5"]
+
+[ext_resource type="Texture2D" uid="uid://crfh4gt38jfsu" path="res://Assets/light.png" id="1_lc2xi"]
+
+[node name="Torch" type="PointLight2D"]
+energy = 0.4
+texture = ExtResource("1_lc2xi")
