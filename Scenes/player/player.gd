@@ -1,7 +1,12 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+@export var SPEED = 300.0
+
+@export var MAX_HEALTH = 100.0
+@onready var health_bar: HealthBar = $HealthBar
+
+var health = MAX_HEALTH
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -11,6 +16,10 @@ var bulletScene = preload("res://Scenes/bullet/bullet.tscn")
 @onready var bullet_spawn: Marker2D = $BulletSpawn
 
 var mouseDir: Vector2 = Vector2.ZERO
+
+func _ready():
+	#health_bar.text = str(health)
+	pass
 
 func _physics_process(delta):
 
@@ -40,3 +49,14 @@ func shoot():
 	bulletInstance.position = bullet_spawn.global_position
 	bulletInstance.rotation = mouseDir.angle()
 	get_tree().current_scene.add_child(bulletInstance)
+	
+func take_damage(damagePoints: float):
+	health -= damagePoints
+	
+	print("Player percent: %s" % (health/MAX_HEALTH))
+	
+	health_bar.set_health_percent(health/MAX_HEALTH * 100)
+	
+	if health <= 0:
+		print("You died!")
+		get_tree().reload_current_scene()

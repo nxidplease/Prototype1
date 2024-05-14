@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d33fsn34k0yqb"]
+[gd_scene load_steps=5 format=3 uid="uid://d33fsn34k0yqb"]
 
 [ext_resource type="Script" path="res://Scenes/player/player.gd" id="1_2su5l"]
 [ext_resource type="Texture2D" uid="uid://chfhkk82eqr8s" path="res://icon.svg" id="1_tmj64"]
+[ext_resource type="PackedScene" uid="uid://ds452bv5i1udn" path="res://Scenes/healthBar/health_bar.tscn" id="3_o1wp6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7nxc5"]
 size = Vector2(24, 24)
@@ -24,8 +25,15 @@ zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 
 [node name="BulletSpawn" type="Marker2D" parent="."]
-position = Vector2(0, -37)
+position = Vector2(0, -19)
 
 [node name="Sprite2D" type="Sprite2D" parent="BulletSpawn"]
 scale = Vector2(0.0351565, 0.0383523)
 texture = ExtResource("1_tmj64")
+metadata/_edit_lock_ = true
+
+[node name="HealthBar" parent="." instance=ExtResource("3_o1wp6")]
+offset_left = -11.995
+offset_top = -21.3
+offset_right = 12.005
+offset_bottom = -13.3
