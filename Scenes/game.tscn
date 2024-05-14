@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://d0ctax5jc1bcn" path="res://Scenes/Bug/bug.tscn" id="1_2mk6a"]
 [ext_resource type="Texture2D" uid="uid://chfhkk82eqr8s" path="res://icon.svg" id="1_123mn"]
-[ext_resource type="PackedScene" uid="uid://dmjwowvmulxg8" path="res://Scenes/void.tscn" id="1_av8we"]
 [ext_resource type="PackedScene" uid="uid://d33fsn34k0yqb" path="res://Scenes/player/player.tscn" id="2_lsgwx"]
 [ext_resource type="Texture2D" uid="uid://dy1xy2xyo0auu" path="res://Assets/tileset x1.png" id="3_timar"]
+[ext_resource type="Texture2D" uid="uid://crfh4gt38jfsu" path="res://Assets/light.png" id="4_xwaln"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_6gom8"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -2731,6 +2731,9 @@ sources/1 = SubResource("TileSetAtlasSource_bio0u")
 
 [node name="Game" type="Node2D"]
 
+[node name="Drakness" type="CanvasModulate" parent="."]
+color = Color(0.017434, 0.0114627, 0.126103, 1)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(16.7656, 16.7656)
 texture = ExtResource("1_123mn")
@@ -2742,9 +2745,9 @@ layer_0/tile_data = PackedInt32Array(-262157, 4325377, 2, -262156, 4325377, 2, -
 
 [node name="Player" parent="." instance=ExtResource("2_lsgwx")]
 
-[node name="Void" parent="Player" instance=ExtResource("1_av8we")]
-position = Vector2(0, 0)
-circleSize = 0.05
+[node name="PointLight2D" type="PointLight2D" parent="Player"]
+energy = 0.57
+texture = ExtResource("4_xwaln")
 
 [node name="bug" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_2mk6a")]
 position = Vector2(-152, 0)
