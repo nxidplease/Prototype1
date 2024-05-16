@@ -29,9 +29,10 @@ func _physics_process(delta):
 	var directionY = Input.get_axis("move_up", "move_down")
 	
 	if directionX || directionY:
-		velocity = Vector2(directionX, directionY) * SPEED
+		velocity = Vector2(directionX, directionY).normalized() * SPEED
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, velocity.length() * .1)
+		#velocity = velocity.move_toward(Vector2.ZERO, velocity.length() * .1)
+		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
 
 	move_and_slide()
 	
@@ -55,7 +56,7 @@ func take_damage(damagePoints: float):
 	
 	print("Player percent: %s" % (health/MAX_HEALTH))
 	
-	health_bar.set_health_percent(health/MAX_HEALTH * 100)
+	health_bar.set_health_percent(health/MAX_HEALTH)
 	
 	if health <= 0:
 		print("You died!")

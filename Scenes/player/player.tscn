@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d33fsn34k0yqb"]
+[gd_scene load_steps=6 format=3 uid="uid://d33fsn34k0yqb"]
 
 [ext_resource type="Script" path="res://Scenes/player/player.gd" id="1_2su5l"]
 [ext_resource type="Texture2D" uid="uid://chfhkk82eqr8s" path="res://icon.svg" id="1_tmj64"]
@@ -6,6 +6,8 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7nxc5"]
 size = Vector2(24, 24)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0p41y"]
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -33,6 +35,7 @@ texture = ExtResource("1_tmj64")
 metadata/_edit_lock_ = true
 
 [node name="HealthBar" parent="." instance=ExtResource("3_o1wp6")]
+material = SubResource("CanvasItemMaterial_0p41y")
 offset_left = -11.995
 offset_top = -21.3
 offset_right = 12.005

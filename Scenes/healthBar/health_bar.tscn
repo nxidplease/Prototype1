@@ -1,17 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://ds452bv5i1udn"]
+[gd_scene load_steps=5 format=3 uid="uid://ds452bv5i1udn"]
 
 [ext_resource type="Script" path="res://Scenes/healthBar/health_bar.gd" id="1_pfusa"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bub6y"]
+
+[sub_resource type="Gradient" id="Gradient_3b750"]
+colors = PackedColorArray(0.788235, 0.109804, 0.109804, 1, 0.393333, 1, 0.35, 1)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_iaavt"]
 light_mode = 1
 
 [node name="HealthBar" type="ColorRect"]
+material = SubResource("CanvasItemMaterial_bub6y")
 offset_right = 24.0
 offset_bottom = 8.0
 color = Color(0, 0, 0, 1)
 script = ExtResource("1_pfusa")
+health_color_gradient = SubResource("Gradient_3b750")
 
 [node name="InsideRect" type="ColorRect" parent="."]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -24,11 +32,12 @@ offset_right = 11.0
 offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.39, 1, 0.471333, 1)
+color = Color(0.392157, 1, 0.34902, 1)
 
 [node name="HealthBar" type="Label" parent="."]
 visible = false
 material = SubResource("CanvasItemMaterial_iaavt")
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 8

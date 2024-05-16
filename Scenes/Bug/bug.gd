@@ -48,7 +48,7 @@ func _on_timer_timeout():
 func take_damage(damagePoints: float):
 	health -= damagePoints
 
-	health_bar.set_health_percent(health / MAX_HEALTH * 100)
+	health_bar.set_health_percent(health / MAX_HEALTH)
 	
 	if health <= 0:
 		bug_died.emit(global_position)
