@@ -21,8 +21,15 @@ func _ready():
 	
 
 func _physics_process(delta: float) -> void:
-	var dir = to_local(nav_agent.get_next_path_position()).normalized()
-	velocity = dir * speed
+		
+	makepath()
+	
+	if nav_agent.is_navigation_finished():
+		velocity = (player.position - position).normalized() * speed
+	else:
+		var dir = to_local(nav_agent.get_next_path_position()).normalized()
+		velocity = dir * speed
+		
 	
 	if move_and_slide():
 		for i in get_slide_collision_count():

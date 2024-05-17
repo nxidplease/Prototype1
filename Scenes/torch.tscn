@@ -1,7 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://cchmhlb1mwgn5"]
+[gd_scene load_steps=3 format=3 uid="uid://cchmhlb1mwgn5"]
 
-[ext_resource type="Texture2D" uid="uid://crfh4gt38jfsu" path="res://Assets/light.png" id="1_lc2xi"]
+[sub_resource type="Gradient" id="Gradient_rvso6"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3hl37"]
+gradient = SubResource("Gradient_rvso6")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
 
 [node name="Torch" type="PointLight2D"]
-energy = 0.4
-texture = ExtResource("1_lc2xi")
+color = Color(1.497, 0.395, 0, 1)
+texture = SubResource("GradientTexture2D_3hl37")
+texture_scale = 1.4

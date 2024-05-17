@@ -13,7 +13,8 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
 
 
-func _on_body_entered(body: PhysicsBody2D):
-	if body.get_collision_layer_value(ENEMY_COLLISISON_LAYER):
+func _on_body_entered(body: Node):
+	if body is PhysicsBody2D && body.get_collision_layer_value(ENEMY_COLLISISON_LAYER):
 		body.take_damage(damage)
-		queue_free()
+	
+	queue_free()
